@@ -15,6 +15,6 @@ class No1157Test {
 
         char answer = no1157.answer(value);
 
-        assertEquals(answer, expected);
+        assertEquals(expected, answer);
     }
 }

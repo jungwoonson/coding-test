@@ -14,6 +14,6 @@ class No1919Test {
         No1919 no1919 = new No1919();
         int answer = no1919.answer(a, b);
 
-        assertEquals(answer, expected);
+        assertEquals(expected, answer);
     }
 }

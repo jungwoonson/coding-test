@@ -15,6 +15,6 @@ class No1543Test {
 
         int answer = no1543.answer(document, value);
 
-        assertEquals(answer, expected);
+        assertEquals(expected, answer);
     }
 }
