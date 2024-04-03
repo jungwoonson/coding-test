@@ -9,11 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class No10158Test {
 
     @ParameterizedTest
-    @CsvSource(value = {"6 4,4 1,8,0 1", "6 4,5 3,4,3 1"})
-    void answer(String field, String location, String hour, String expected) {
-        No10158 no10158 = new No10158();
-
-        String answer = no10158.answer(field, location, hour);
+    @CsvSource(value = {"6,4,4,1,8,0 1", "6,4,5,3,4,3 1"})
+    void answer(int w, int h, int p, int q, int t, String expected) {
+        String answer = No10158.answer(w, h, p, q, t);
 
         assertEquals(expected, answer);
     }
