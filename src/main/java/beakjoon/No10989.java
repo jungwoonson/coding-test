@@ -1,5 +1,7 @@
 package beakjoon;
 
+import java.io.*;
+
 public class No10989 {
 
     public static int[] answer(int[] numbers) {
@@ -19,5 +21,25 @@ public class No10989 {
         }
 
         return numbers;
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int length = Integer.parseInt(br.readLine());
+        int[] counts = new int[10001];
+        for (int i = 0; i < length; i++) {
+            counts[Integer.parseInt(br.readLine())]++;
+        }
+
+        for (int i = 0; i < counts.length; i++) {
+            while (counts[i]-- > 0) {
+                bw.write(i + "\n");
+            }
+        }
+
+        bw.flush();
+        bw.close();
     }
 }
