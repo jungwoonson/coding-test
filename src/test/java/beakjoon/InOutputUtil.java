@@ -1,4 +1,4 @@
-package util;
+package beakjoon;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
