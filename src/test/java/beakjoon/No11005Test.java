@@ -28,9 +28,13 @@ class No11005Test {
     }
 
     public static Stream<Arguments> data() {
-        return Stream.of(Arguments.of(
-                "60466175 36", "ZZZZZ"
-        ));
+        return Stream.of(
+                Arguments.of("60466175 36", "ZZZZZ"),
+                Arguments.of("1111 10", "1111"),
+                Arguments.of("17 2", "10001"),
+                Arguments.of("4 4", "10"),
+                Arguments.of("0 5", "0")
+        );
     }
 
     @ParameterizedTest
