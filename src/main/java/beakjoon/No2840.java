@@ -30,11 +30,30 @@ public class No2840 {
             wheel[index] = spell;
         }
 
-        bw.write("");
+        StringBuilder answer = new StringBuilder();
+        for (int i = n; i > 0; i--) {
+            char value = wheel[turn(index, i, n)];
+            if (value == 0) {
+                answer.append("?");
+                continue;
+            }
+
+            if (answer.toString().contains(String.valueOf(value))) {
+                bw.write("!");
+                bw.flush();
+                bw.close();
+                return;
+            }
+
+            answer.append(value);
+        }
+
+        bw.write(answer.toString());
+        bw.flush();
+        bw.close();
     }
 
     public static int turn(int index, int count, int n) {
         return (index + count) % n;
     }
 }
-

@@ -33,8 +33,9 @@ class No2840Test {
     public static Stream<Arguments> data() {
         return Stream.of(
                 Arguments.of("3 3" + NL + "1 A" + NL + "2 B" + NL + "3 C", "!"),
-                Arguments.of("5 6" + NL + "1 A" + NL + "2 B" + NL + "5 B" + "1 C" + "2 A" + "2 B", "B?A?C"),
-                Arguments.of("8 8" + NL + "4 V" + NL + "3 I" + NL + "7 T" + NL + "7 A" + NL + "6 R" + "5 N" + "1 O" + "9 H", "HONITAVR")
+                Arguments.of("5 6" + NL + "1 A" + NL + "2 B" + NL + "5 B" + NL + "1 C" + NL + "2 A" + NL + "2 B", "B?A?C"),
+                Arguments.of("8 8" + NL + "4 V" + NL + "3 I" + NL + "7 T" + NL + "7 A" + NL + "6 R" + NL + "5 N" + NL + "1 O" + NL + "9 H", "HONITAVR"),
+                Arguments.of("2 2" + NL + "4 L" + NL + "4 A", "!")
         );
     }
 
