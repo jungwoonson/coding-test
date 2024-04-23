@@ -12,6 +12,7 @@ public class No2817 {
         int count = Integer.parseInt(br.readLine());
 
         int[] staffs = new int[26];
+        boolean[] staffsValid = new boolean[26];
         double[][] result = new double[26][14];
 
         for (int i = 0; i < count; i++) {
@@ -22,6 +23,7 @@ public class No2817 {
                 continue;
             }
 
+            staffsValid[name - 'A'] = true;
             for (int j = 0; j < 14; j++) {
                 result[name - 'A'][j] = (double) vote / (double) (j + 1);
             }
@@ -49,7 +51,7 @@ public class No2817 {
         }
 
         for (int i = 0; i < staffs.length; i++) {
-            if (staffs[i] <= 0) {
+            if (!staffsValid[i]) {
                 continue;
             }
 
