@@ -22,8 +22,8 @@ public class No3273 {
         }
 
         int answer = 0;
-        int half = (x % 2 == 0) ? (x / 2 - 1) : (x /2);
-        for (int i = 1; i < half + 1; i++) {
+        int half = (x % 2 == 0) ? (x / 2) : (x / 2 + 1);
+        for (int i = 1; i < half; i++) {
             if (counts[i] > 0 && counts[x - i] > 0) {
                 answer++;
             }

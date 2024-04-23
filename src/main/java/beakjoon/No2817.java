@@ -10,6 +10,7 @@ public class No2817 {
 
         int participant = Integer.parseInt(br.readLine());
         int count = Integer.parseInt(br.readLine());
+
         int[] staffs = new int[26];
         double[][] result = new double[26][14];
 
@@ -26,10 +27,38 @@ public class No2817 {
             }
         }
 
-        bw.write("");
+        double max = 2500001;
+
+        for (int i = 0; i < 14; i++) {
+            double targetScore = 0;
+            int targetName = 99;
+
+            for (int j = 0; j < 26; j++) {
+                for (int k = 0; k < 14; k++) {
+                    if (result[j][k] < max && targetScore < result[j][k]) {
+                        targetScore = result[j][k];
+                        targetName = j;
+                    }
+                }
+            }
+
+            if (targetScore > 0) {
+                staffs[targetName]++;
+                max = targetScore;
+            }
+        }
+
+        for (int i = 0; i < staffs.length; i++) {
+            if (staffs[i] <= 0) {
+                continue;
+            }
+
+            bw.write((char) (i + 'A'));
+            bw.write(" ");
+            bw.write(staffs[i] + System.lineSeparator());
+        }
 
         bw.flush();
         bw.close();
     }
 }
-

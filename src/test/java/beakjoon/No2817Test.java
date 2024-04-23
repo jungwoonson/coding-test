@@ -35,7 +35,9 @@ class No2817Test {
                 Arguments.of("245143" + NL + "4" + NL + "F 14845" + NL + "A 104516" + NL + "B 52652" + NL + "C 14161",
                         "A 8" + NL + "B 4" + NL + "C 1" + NL + "F 1"),
                 Arguments.of("206278" + NL + "5" + NL + "D 44687" + NL + "A 68188" + NL + "C 7008" + NL + "B 48377" + NL + "G 9665",
-                        "A 6" + NL + "B 4" + NL + "D 4")
+                        "A 6" + NL + "B 4" + NL + "D 4"),
+                Arguments.of("23421" + NL + "1" + NL + "A 1",
+                        "")
         );
     }
 
