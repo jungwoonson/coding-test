@@ -1,4 +1,4 @@
-package beakjoon.no005정렬;
+package beakjoon.no006누적합배열과구간합;
 
 import beakjoon.InOutputUtil;
 import org.junit.jupiter.api.AfterEach;
