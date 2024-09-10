@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "com.cordingtest"
+group = "com.codingtest"
 version = "1.0-SNAPSHOT"
 
 repositories {
