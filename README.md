@@ -31,3 +31,29 @@ public int[] prefixSum(int[] array) {
     return result;
 }
 ```
+
+### 이분탐색 (Binary Search)
+- 정렬되어 있는 집합에서 원하는 값을 찾는 효율적인 탐색 방법
+- O(log N) 시간복잡도
+- 중간값을 기준으로 탐색 범위를 반으로 줄여나가는 방식
+```java
+// 정렬되어있는 배열에서 x값이 존재하는지 
+// 이분탐색 구현 예시
+boolean isExist(int[] arr, int x) {
+    int l = 0;
+    int r = arr.length - 1;
+    while (l <= r) {
+        int m = (l + r) / 2;
+        if (arr[m] < x) {
+            l = m + 1;
+            continue;
+        }
+        if (arr[m] > x) {
+            r = m - 1;
+            continue;
+        }
+        return true;
+    }
+    return false;
+}
+```
