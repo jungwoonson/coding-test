@@ -36,7 +36,10 @@ class No2805_1Test {
                         "15"),
                 Arguments.of("5 20" + NL +
                                 "4 42 40 26 46",
-                        "36")
+                        "36"),
+                Arguments.of("10 55" + NL +
+                                "1 2 3 4 5 6 7 8 9 10",
+                        "0")
         );
     }
 
@@ -47,6 +50,8 @@ class No2805_1Test {
 
         No2805_1.main(new String[0]);
         String actual = outputStreamCaptor.toString().trim();
+        Long a = 100000000000000L;
+        Integer b = 123123;
 
         assertThat(actual).isEqualTo(expected);
     }

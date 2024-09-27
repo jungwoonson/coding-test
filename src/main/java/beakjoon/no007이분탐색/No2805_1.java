@@ -19,16 +19,18 @@ public class No2805_1 {
                 .sorted()
                 .toArray(Integer[]::new);
 
-        int index = getMid(trees, m);
-        long start = trees[index];
+        int index = getMinIndex(trees, m);
+        long start = 0;
         long end = trees[trees.length - 1];
 
-        long result = 0;
-        for (long i = start; i <= end; i++) {
-            if (calcCutTreeSum(trees, index, i) >= m) {
-                result = i;
+        long result = -1;
+        while (start <= end) {
+            long h = (start + end) / 2;
+            if (calcCutTreeSum(trees, index, h) >= m) {
+                result = h;
+                start = h + 1;
             } else {
-                break;
+                end = h - 1;
             }
         }
 
@@ -38,10 +40,10 @@ public class No2805_1 {
         bw.close();
     }
 
-    public static int getMid(Integer[] trees, long m) {
+    public static int getMinIndex(Integer[] trees, long m) {
         int start = 0;
         int end = trees.length - 1;
-        int result = end;
+        int result = 0;
         while (start <= end) {
             int mid = (start + end) / 2;
             if (calcCutTreeSum(trees, mid) >= m) {
@@ -56,7 +58,7 @@ public class No2805_1 {
 
     public static long calcCutTreeSum(Integer[] trees, int start, long m) {
         long result = 0;
-        for (int i = start; i <= trees.length - 1; i++) {
+        for (int i = start; i < trees.length; i++) {
             result += cut(trees[i], m);
         }
         return result;
@@ -64,7 +66,7 @@ public class No2805_1 {
 
     public static long calcCutTreeSum(Integer[] trees, int start) {
         long result = 0;
-        for (int i = start; i <= trees.length - 1; i++) {
+        for (int i = start; i < trees.length; i++) {
             result += cut(trees[i], trees[start]);
         }
         return result;
