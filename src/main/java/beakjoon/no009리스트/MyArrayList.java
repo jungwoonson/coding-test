@@ -49,7 +49,7 @@ public class MyArrayList<E> {
         size--;
     }
 
-    public void growCapacity() {
+    private void growCapacity() {
         if (size == data.length) {
             int newCapacity = data.length + (data.length >> 1);
             data = Arrays.copyOf(data, newCapacity);
