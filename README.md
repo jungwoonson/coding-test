@@ -67,3 +67,14 @@ boolean isExist(int[] arr, int x) {
     - 서로 다른 배열에서 이동하는 투 포인터
     - 여러 형태에서 효율적인 시간복잡도를 가진다.
 3. 두 포인터 중 하나 혹은 둘 모두가 끝에 도달할 때까지 반복한다.
+
+### 큐 (Queue)
+- FIFO(First In First Out) 구조
+```java
+add (E e); // 원소를 큐에 추가 큐에 공간이 없다면 IllegalStateException 발생
+offer (E e); // 원소를 큐에 추가 큐에 공간이 없다면 false 반환
+remove(); // 큐의 첫 번째 원소를 제거하고 반환 큐가 비어있다면 NoSuchElementException 발생
+poll(); // 큐의 첫 번째 원소를 제거하고 반환 큐가 비어있다면 null 반환
+element(); // 큐의 head 원소를 반환 큐가 비어있다면 NoSuchElementException 발생
+peek(); // 큐의 첫 번째 원소를 반환 큐가 비어있다면 null 반환
+```
