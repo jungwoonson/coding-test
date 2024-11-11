@@ -33,6 +33,10 @@ class No2504Test {
             Arguments.of("(()[[]])([])",
                     "28"),
             Arguments.of("[][]((])",
+                    "0"),
+            Arguments.of("(((())))",
+                    "16"),
+            Arguments.of("[",
                     "0")
         );
     }

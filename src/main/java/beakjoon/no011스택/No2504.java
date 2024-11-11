@@ -9,19 +9,78 @@ public class No2504 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-        char[] charArray = br.readLine().toCharArray();
-        Stack<Character> stack = new Stack<>();
+        String[] charArray = br.readLine().split("");
+        Stack<String> stack = new Stack<>();
+
+        for (final String bracket : charArray) {
+            if (bracket.equals("(") || bracket.equals("[")) {
+                stack.add(bracket);
+                continue;
+            }
+
+            if (stack.isEmpty()) {
+                stack.add("0");
+                break;
+            }
+
+            final String pop = stack.pop();
+
+            if (pop.equals("(") || pop.equals("[")) {
+                if (pop.equals("(") && bracket.equals(")")) {
+                    stack.add("2");
+                    continue;
+                }
+                if (pop.equals("[") && bracket.equals("]")) {
+                    stack.add("3");
+                    continue;
+                }
+                stack.clear();
+                stack.add("0");
+                break;
+            }
+
+            int sum = 0;
+            sum = Integer.parseInt(pop);
+
+            while (!stack.isEmpty() && !"([".contains(stack.peek())) {
+                sum += Integer.parseInt(stack.pop());
+            }
+
+            if (stack.isEmpty()) {
+                stack.add("0");
+                break;
+            }
+
+            final String pop2 = stack.pop();
+
+            if (pop2.equals("(") && bracket.equals(")")) {
+                String num = String.valueOf(sum * 2);
+                stack.add(num);
+                continue;
+            }
+
+            if (pop2.equals("[") && bracket.equals("]")) {
+                String num = String.valueOf(sum * 3);
+                stack.add(num);
+                continue;
+            }
+
+            stack.clear();
+            stack.add("0");
+            break;
+        }
 
         int result = 0;
-        int middleResult = 0;
-        int temp = 0;
-        boolean 이전에괄호가닫힘 = false;
-        int[] resultArr = new int[20];
-        int depth = 0;
-
-        for (int i = 0; i < charArray.length; i++) {
-
+        while (!stack.isEmpty()) {
+            try {
+                result += Integer.parseInt(stack.pop());
+            } catch (NumberFormatException e) {
+                result = 0;
+                break;
+            }
         }
+
+        bw.write(result + System.lineSeparator());
 
         bw.flush();
         bw.close();
