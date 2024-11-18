@@ -1,4 +1,4 @@
-package beakjoon.no005정렬;
+package beakjoon.no013재귀트리;
 
 import static beakjoon.InOutputUtil.NL;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,7 +14,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-class No10814Test {
+class No15681Test {
 
     public final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
@@ -30,8 +30,21 @@ class No10814Test {
 
     public static Stream<Arguments> data() {
         return Stream.of(
-                Arguments.of("3" + NL + "21 Junkyu" + NL + "21 Dohyun" + NL + "20 Sunyoung",
-                        "20 Sunyoung" + NL + "21 Junkyu" + NL + "21 Dohyun")
+            Arguments.of("9 5 3" + NL
+                    + "1 3" + NL
+                    + "4 3" + NL
+                    + "5 4" + NL
+                    + "5 6" + NL
+                    + "6 7" + NL
+                    + "2 3" + NL
+                    + "9 6" + NL
+                    + "6 8" + NL
+                    + "5" + NL
+                    + "4" + NL
+                    + "8",
+                "9" + NL
+                    + "4" + NL
+                    + "1")
         );
     }
 
@@ -40,7 +53,7 @@ class No10814Test {
     void main(String data, String expected) throws IOException {
         InOutputUtil.setIn(data);
 
-        No10814.main(new String[0]);
+        No15681.main(new String[0]);
         String actual = outputStreamCaptor.toString().trim();
 
         assertThat(actual).isEqualTo(expected);
