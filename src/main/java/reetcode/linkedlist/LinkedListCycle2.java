@@ -1,4 +1,4 @@
-package reetcode.linkedlist.linkedlistcycle;
+package reetcode.linkedlist;
 
 public class LinkedListCycle2 {
 
