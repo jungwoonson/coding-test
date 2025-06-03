@@ -1,4 +1,4 @@
-package reetcode.linkedlist.linkedlistcycle;
+package reetcode.linkedlist;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
