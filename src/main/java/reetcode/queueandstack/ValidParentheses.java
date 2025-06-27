@@ -1,4 +1,4 @@
-package reetcode.queue;
+package reetcode.queueandstack;
 
 import java.util.Stack;
 

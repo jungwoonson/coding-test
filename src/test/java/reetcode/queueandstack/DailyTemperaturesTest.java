@@ -1,4 +1,4 @@
-package reetcode.queue;
+package reetcode.queueandstack;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

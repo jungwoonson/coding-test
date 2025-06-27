@@ -1,7 +1,5 @@
-package reetcode.queue;
+package reetcode.queueandstack;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Stack;
 
 class EvaluateReversePolishNotation {
