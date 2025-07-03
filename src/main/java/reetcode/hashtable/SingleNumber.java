@@ -6,8 +6,8 @@ import java.util.Set;
 public class SingleNumber {
 
     // Constraints:
-    // 1 <= nums.length <= 10^5
-    // -10^9 <= nums[i] <= 10^9
+    // 1 <= nums.length <= 3 * 10^4
+    // -3 * 10^4 <= nums[i] <= 3 * 10^4
     public int singleNumber(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
