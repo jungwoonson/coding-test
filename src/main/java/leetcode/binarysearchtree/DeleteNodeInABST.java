@@ -34,12 +34,13 @@ public class DeleteNodeInABST {
         TreeNode succ = minNode(root.right);
         root.val = succ.val;
         root.right = deleteNode(root.right, succ.val);
-
         return root;
     }
 
     private TreeNode minNode(TreeNode node) {
-        while (node.left != null) node = node.left;
+        while (node.left != null) {
+            node = node.left;
+        }
         return node;
     }
 }
